@@ -1,6 +1,6 @@
 # 🔥 Campfire 2026 · Builder Setup
 
-**Builder: give this file to Claude, and Claude will walk you through everything.** In a regular Claude chat (the Claude app or claude.ai), drag this file into the message box and press Return. Already in Claude Code? Type `Read ~/Downloads/campfire-builder-setup.md and walk me through the setup.` The setup itself happens in **Claude Code**, and Claude will help you get there first. Please finish by **5pm on Friday, November 6**, and set aside about an hour.
+**Builder: give this file to Claude, and Claude will walk you through everything.** In a regular Claude chat (the Claude app or claude.ai), drag this file into the message box and press Return. Already in Claude Code? Type `Read ~/Downloads/campfire-builder-setup.md and walk me through the setup.` The setup itself happens in **Claude Code**, and Claude will help you get there first. **VS Code and its Claude Code extension are required**, and Claude will help you install them. Please finish by **5pm on Friday, November 6**, and set aside about an hour.
 
 Along the way you'll be asked to OK the installation of a few tools (like git). That's expected, so go ahead and accept. Questions at any point? Ask Claude. If Claude can't answer, ask Tom or Katie.
 
@@ -82,7 +82,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
    - Click **File → New Folder** and name it `campfire` (all lowercase).
    - Drag the `campfire` folder into Finder's left sidebar, under **Favorites**, so it's easy to find later.
    - Move this setup file into `campfire`. It's probably in **Downloads**, in the sidebar.
-2. **Open Claude Code in that folder.** First ask whether they're using the Claude app or claude.ai in a web browser. Then ask which option they'd like. Either way, they'll also get **VS Code** during the setup, so choosing Option B now just does that step early.
+2. **Open Claude Code in that folder.** First ask whether they're using the Claude app or claude.ai in a web browser. Then ask which option they'd like. Either way, **VS Code and its Claude Code extension are required** for every Builder, and Claude Code installs them during the setup. Choosing Option B now just does that step early.
    - **Option A: the Claude desktop app (recommended, the simplest).**
      - If they're already in the app, it's just the **Code** tab.
      - If they don't have the app: download it from https://claude.ai/download, open **Downloads**, double-click the Claude file, drag the Claude icon into **Applications**, then open Claude from Applications and sign in with their Clever Claude account.
@@ -157,7 +157,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
 
 Goal: `brew`, `git`, `node`/`npm` and `gh` all work, and VS Code is installed with the Claude Code extension.
 
-**Tell them, in plain terms:** "First we'll install a few free tools your Mac needs to build websites. Think of it as stocking the toolbox. You'll only need to help with one part."
+**Tell them, in plain terms:** "First we'll install a few free tools your Mac needs to build websites. Think of it as stocking the toolbox. You'll only need to help with a couple of parts."
 
 1. **Before you start:**
    - **If they're not an admin on this Mac,** they can't install the tools. Stop and write a short note for them to send Tom.
@@ -174,13 +174,14 @@ Goal: `brew`, `git`, `node`/`npm` and `gh` all work, and VS Code is installed wi
 
    Then quietly finish the job yourself; they don't need to know about this part. On Apple Silicon (`uname -m` prints `arm64`), Homebrew lives in `/opt/homebrew`. If `~/.zprofile` doesn't already have the line `eval "$(/opt/homebrew/bin/brew shellenv)"`, add it. **This session won't see the new tools on its own**, so for the rest of the setup, start every `brew`, `node`, `npm`, `npx` and `gh` command with `eval "$(/opt/homebrew/bin/brew shellenv)" && ` (on Intel Macs, `/usr/local/bin/brew`).
 3. **Install what's missing:** `brew install node gh`.
-4. **VS Code.** Encourage it for everyone, even if they're using the Claude desktop app: "VS Code is a free app for seeing and editing your project's files. At Campfire, it's handy to have your files open next to Claude, and you can run Claude Code inside it too."
+4. **VS Code and the Claude Code extension (required).** Every Builder needs both, even if they're using the Claude desktop app. Tell them why: "VS Code is a free app for seeing and editing your project's files. At Campfire, you'll have your files open next to Claude, and you can run Claude Code right inside it."
    - If `/Applications/Visual Studio Code.app` doesn't exist, install it: `brew install --cask visual-studio-code`.
    - Add the Claude Code extension: `code --install-extension anthropic.claude-code`. If VS Code was installed by hand and `code` isn't found, use `"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"`.
-   - The first time they open it, macOS may ask "Are you sure you want to open it?" They click **Open**.
-5. **Confirm** with version checks. Node should be version 20 or newer. Also confirm a fresh shell finds everything, so future Claude Code sessions work: `zsh -lc 'git --version && node -v && gh --version && code --version'`.
+   - Have them open VS Code. The first time, macOS may ask "Are you sure you want to open it?" They click **Open**.
+   - Have them click the Claude icon (✳) in VS Code's left sidebar and sign in with their **Clever Claude account** (the Claude subscription option, not an API key), so it's ready for Campfire. Skip this if they already signed in there during Phase 1.
+5. **Confirm** with version checks. Node should be version 20 or newer. Check that `code --list-extensions` includes `anthropic.claude-code`. Also confirm a fresh shell finds everything, so future Claude Code sessions work: `zsh -lc 'git --version && node -v && gh --version && code --version'`.
 
-✅ Done when: git, brew, node, gh and code all print a version.
+✅ Done when: git, brew, node, gh and code all print a version, the Claude Code extension is installed, and they've signed in to it in VS Code.
 
 ### Step 2: GitHub
 

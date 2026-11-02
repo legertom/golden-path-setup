@@ -35,6 +35,7 @@ That's it. Claude takes it from here!
 
 ## Good to know
 
+- **VS Code and its Claude Code extension are required.** Claude will install them for you during setup and help you sign in.
 - **Along the way, you'll be asked to OK the installation of a few tools** (like git and VS Code). That's expected, so go ahead and accept.
 - **Claude Code asks permission before it does things on your Mac.** For this setup it's fine to click **Allow**.
 - **Never paste passwords into the chat.** Claude will never ask you to.
