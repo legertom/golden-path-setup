@@ -128,7 +128,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
 4. Starter team page made and previewed on your Mac
 5. Your work saved to GitHub
 6. Vercel set up, and your page live on the internet
-7. Practice: make a change and watch it go live
+7. Make it yours: ask Claude for changes, then watch them go live
 8. Link sent to Tom and Katie by 5pm on Friday, November 6
 
 ### Step 0: Welcome, heads-up and questions
@@ -227,7 +227,7 @@ GitHub is where their code lives online, and Vercel publishes the site from ther
      - Starter page: built and previewed on my Mac
      - Saved to GitHub: in a private repo
      - Live on Vercel: you're looking at it!
-     - Practice update: a change published by pushing to GitHub
+     - Made it mine: asked Claude for a content change and a design change, then published them
      - GitHub connector in Claude (optional): connected or skipped
 
      For now, the first five are ✅ and the rest are ⏳. You'll finish the list in Step 6.
@@ -327,25 +327,41 @@ This lets regular Claude chats read their GitHub projects too. Claude Code doesn
 - Have them open Claude (the app or claude.ai), go to **Settings → Connectors**, find **GitHub**, click **Connect** and approve in the browser.
 - If they don't see it, it isn't allowed for their account, or they'd rather skip it, that's fine. Either way, remember the result for the checklist in Step 6.
 
-### Step 6: Practice the "change → push → live" loop
+### Step 6: Make it yours, then publish
 
-This is exactly how they'll work at Campfire, so do one round now while there's no pressure. This update also publishes their proof of setup.
+This is the most important lesson of the setup: **at Campfire, they'll build by describing what they want in plain words, and Claude makes it happen.** Let them feel how easy that is, with two small changes they ask for themselves, in their own words. Then they publish the result.
 
-1. Ask everyone's favorite campfire snack 🔥. They can ask their teammates, or just put in their own and add the others later. Add the snack(s) to the team cards.
-2. In the same change, **finish the setup checklist on the page**:
+**Part A: Ask Claude for two changes**
+
+1. **Set the scene.** Tell them something like: "Here's the fun part, and it's exactly how your team will build at Campfire. You describe what you want, and I make it. Let's try it twice." Start `npm run dev` in the background and have them open http://localhost:3000 next to this chat, so they can watch their page change.
+2. **A content change.** Ask: "What's your favorite animal?" Once they answer, give them the request to send, with their answer filled in, for example:
+
+   `Add a short paragraph about my favorite animal, the otter, to my card.`
+
+   Have them type it (or copy it) into the message box and send it themselves; that's the point. Make the change, then have them refresh the preview and see their words on the page.
+3. **A design change.** Ask: "If your page could look like anything, what would it be? For example: a cozy cabin, a starry night sky, a retro arcade or a beach at sunset." Give them the request with their answer filled in, for example:
+
+   `Change the design of the website to make it look like a starry night sky.`
+
+   Have them send it themselves. Restyle the page to match: colors, fonts and layout, with emoji welcome. Keep it readable, phone-friendly and image-free, and keep every name, role and checklist item. Have them refresh and enjoy the new look.
+4. **Name what just happened.** "You just changed both the content and the look of your app, just by asking. That's how your team will build at Campfire." If they want another tweak, go for it, then stop the preview.
+
+**Part B: Publish your changes and your proof of setup**
+
+1. **Finish the setup checklist on the page** in the same update:
    - Mark every item ✅, and fill in the GitHub connector result (connected or skipped).
    - Switch the badge to "✅ Setup complete" and add "Completed <today's date>".
    - Tell them: "This is your proof of setup. Tom and Katie will see everything you did, right on your page."
-3. Also fill in the two links in `CLAUDE.md`.
-4. Build check, commit and push to `main`. Explain that the push is what tells Vercel to publish.
-5. Have them watch the new deployment appear in the Vercel dashboard (about a minute), then refresh the live site. Confirm the snack and the finished checklist show up, and check it yourself with curl too.
+2. Fill in the two links in `CLAUDE.md`.
+3. Build check, commit and push to `main`. Explain that the push is what tells Vercel to publish.
+4. Have them watch the new deployment appear in the Vercel dashboard (about a minute), then refresh the live site. Confirm that their animal paragraph, their new design and the finished checklist all show up, and check it yourself with curl too.
 
 **If Vercel blocks the deployment** with a message about the commit author (or a co-author) not having access:
 - Check that the commit email is their GitHub noreply address.
 - If the message is about a co-author, turn off Claude Code's co-author line for this project in its project settings.
 - Then push again.
 
-✅ Done when: the live site shows the snacks and a fully checked setup checklist.
+✅ Done when: the live site shows their two changes and a fully checked setup checklist.
 
 ### Step 7: Send the link to Tom and Katie
 
@@ -374,6 +390,7 @@ Finish with:
    - VS Code: **File → Open Folder…** → `campfire-idm-<firstname>`, then open Claude Code.
    - Terminal: `cd ~/campfire/campfire-idm-<firstname>`, then `claude`.
 4. **A short cheat sheet** of things they can say to Claude:
+   - "Add a section about ___" or "Change the design to look more ___": you saw how well that works!
    - "Show me the site on my computer": starts the local preview
    - "Publish my changes": checks, saves, pushes and updates the live site
    - "What's changed since I last published?"

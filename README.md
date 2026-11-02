@@ -4,7 +4,7 @@ Hi Builder! Thank you for joining the Campfire hackathon. We're so excited to bu
 
 Before Campfire, you'll get your laptop ready with Claude's help. Claude does the technical work and explains each step as you go, so you don't need any coding experience. It takes about an hour, and some of that is waiting while things install.
 
-By the end, you'll have Claude Code and **VS Code** (a free app for seeing your project's files) on your Mac, plus a live team web page. The page shows everyone's names and roles and a checklist of everything you set up.
+By the end, you'll have Claude Code and **VS Code** (a free app for seeing your project's files) on your Mac, plus a live team web page. The page shows everyone's names and roles and a checklist of everything you set up. Along the way, you'll change your page's words and its whole look just by asking Claude in plain English. That's exactly how your team will build at Campfire.
 
 📅 **Due by 5pm on Friday, November 6.** The last step is sending Tom and Katie the link to your team's live page.
 
