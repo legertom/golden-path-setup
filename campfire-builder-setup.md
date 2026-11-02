@@ -1,6 +1,6 @@
 # 🔥 Campfire 2026 · Builder Setup
 
-**Builder: drag this file into Claude (the Claude app or claude.ai), press Return, and Claude will walk you through everything.** The setup itself happens in **Claude Code**, and Claude will help you get there first. Please finish by **5pm on Friday, November 6**, and set aside about an hour.
+**Builder: give this file to Claude, and Claude will walk you through everything.** In a regular Claude chat (the Claude app or claude.ai), drag this file into the message box and press Return. Already in Claude Code? Type `Read ~/Downloads/campfire-builder-setup.md and walk me through the setup.` The setup itself happens in **Claude Code**, and Claude will help you get there first. Please finish by **5pm on Friday, November 6**, and set aside about an hour.
 
 Along the way you'll be asked to OK the installation of a few tools (like git). That's expected, so go ahead and accept. Questions at any point? Ask Claude. If Claude can't answer, ask Tom or Katie.
 
@@ -68,7 +68,7 @@ The setup has to happen in **Claude Code**, because Claude Code can run commands
 Keep it skimmable and friendly: about 150–200 words, short paragraphs, a few emoji at most.
 1. **Thank them** for joining the Campfire hackathon and for being their team's Builder. Say you're excited to work with them.
 2. **The big picture.** Over two days at Campfire, three teams each build one small web app that teaches a support agent a new Clever IDM skill. Briefly name the three roles and point out that they're the Builder. Say in one sentence why it matters: this is one of the ways CS is using AI to keep improving the customer experience, and the goal is to make Clever IDM the best-supported identity management solution for our customers.
-3. **What they'll have at the end:** Claude Code on their Mac, free GitHub and Vercel accounts, and a live team web page with everyone's names and roles. They'll send the link to Tom and Katie by **5pm on Friday, November 6**.
+3. **What they'll have at the end:** Claude Code and VS Code on their Mac, free GitHub and Vercel accounts, and a live team web page with everyone's names and roles, plus a checklist of everything they set up. They'll send the link to Tom and Katie by **5pm on Friday, November 6**.
 4. **Reassurance.** No coding experience needed. It takes about an hour, some of it waiting while things install. Along the way they'll be asked to OK the installation of a few tools, like git. That's expected, and they should accept. If they have questions, they can ask you anytime. If you can't answer something, they can ask Tom or Katie.
 5. **The first move.** "The setup happens in **Claude Code**, a version of Claude that can actually do things on your computer, so it can do the typing for you. Let's get you there first." Then, unless you already know it, ask their first name so you can use it from here on. Start the steps below once they reply.
 
@@ -82,7 +82,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
    - Click **File → New Folder** and name it `campfire` (all lowercase).
    - Drag the `campfire` folder into Finder's left sidebar, under **Favorites**, so it's easy to find later.
    - Move this setup file into `campfire`. It's probably in **Downloads**, in the sidebar.
-2. **Open Claude Code in that folder.** First ask whether they're using the Claude app or claude.ai in a web browser. Then ask which option they'd like:
+2. **Open Claude Code in that folder.** First ask whether they're using the Claude app or claude.ai in a web browser. Then ask which option they'd like. Either way, they'll also get **VS Code** during the setup, so choosing Option B now just does that step early.
    - **Option A: the Claude desktop app (recommended, the simplest).**
      - If they're already in the app, it's just the **Code** tab.
      - If they don't have the app: download it from https://claude.ai/download, open **Downloads**, double-click the Claude file, drag the Claude icon into **Applications**, then open Claude from Applications and sign in with their Clever Claude account.
@@ -123,7 +123,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
 
 **Checklist:**
 1. Claude Code is running ✅ (it is, if you're reading this in Claude Code!)
-2. Building tools installed on your Mac
+2. Building tools and VS Code installed on your Mac
 3. GitHub connected (where your work is saved online)
 4. Starter team page made and previewed on your Mac
 5. Your work saved to GitHub
@@ -139,7 +139,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
 1. **Welcome.** If they said they're coming from Claude chat, they've had the full welcome, so keep yours to a warm line or two, using their name ("Welcome to Claude Code, Alex! 🎉 Let's do this."). Otherwise, give the full welcome from Phase 1, "Your first message" (items 1–4).
 2. **A short heads-up:**
    - Claude Code asks permission before it runs commands or changes files. Each prompt shows technical text, and they don't need to read it. For this setup it's fine to click **Allow**. If it offers something like "Yes, and don't ask again" for similar commands, that's fine too. They can always ask "what does this do?"
-   - Their Mac or Claude Code will also ask them to OK installing a few tools along the way (git, Homebrew, Node.js and GitHub's tool). That's expected, and they should accept.
+   - Their Mac or Claude Code will also ask them to OK installing a few tools along the way (git, Homebrew, Node.js, GitHub's tool and VS Code). That's expected, and they should accept.
    - Questions about anything? They can ask you anytime. If you can't answer something, they can ask Tom or Katie.
    - If they get interrupted, they can open Claude Code in the `campfire` folder again and say "Read the setup file and pick up where we left off."
 3. **A few quick questions:**
@@ -155,7 +155,7 @@ Walk them through these one at a time. Wait for them to say each one is done, an
 
 ### Step 1: Developer tools
 
-Goal: `brew`, `git`, `node`/`npm` and `gh` all work.
+Goal: `brew`, `git`, `node`/`npm` and `gh` all work, and VS Code is installed with the Claude Code extension.
 
 **Tell them, in plain terms:** "First we'll install a few free tools your Mac needs to build websites. Think of it as stocking the toolbox. You'll only need to help with one part."
 
@@ -174,9 +174,13 @@ Goal: `brew`, `git`, `node`/`npm` and `gh` all work.
 
    Then quietly finish the job yourself; they don't need to know about this part. On Apple Silicon (`uname -m` prints `arm64`), Homebrew lives in `/opt/homebrew`. If `~/.zprofile` doesn't already have the line `eval "$(/opt/homebrew/bin/brew shellenv)"`, add it. **This session won't see the new tools on its own**, so for the rest of the setup, start every `brew`, `node`, `npm`, `npx` and `gh` command with `eval "$(/opt/homebrew/bin/brew shellenv)" && ` (on Intel Macs, `/usr/local/bin/brew`).
 3. **Install what's missing:** `brew install node gh`.
-4. **Confirm** with version checks. Node should be version 20 or newer. Also confirm a fresh shell finds everything, so future Claude Code sessions work: `zsh -lc 'git --version && node -v && gh --version'`.
+4. **VS Code.** Encourage it for everyone, even if they're using the Claude desktop app: "VS Code is a free app for seeing and editing your project's files. At Campfire, it's handy to have your files open next to Claude, and you can run Claude Code inside it too."
+   - If `/Applications/Visual Studio Code.app` doesn't exist, install it: `brew install --cask visual-studio-code`.
+   - Add the Claude Code extension: `code --install-extension anthropic.claude-code`. If VS Code was installed by hand and `code` isn't found, use `"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"`.
+   - The first time they open it, macOS may ask "Are you sure you want to open it?" They click **Open**.
+5. **Confirm** with version checks. Node should be version 20 or newer. Also confirm a fresh shell finds everything, so future Claude Code sessions work: `zsh -lc 'git --version && node -v && gh --version && code --version'`.
 
-✅ Done when: git, brew, node and gh all print a version.
+✅ Done when: git, brew, node, gh and code all print a version.
 
 ### Step 2: GitHub
 
@@ -215,7 +219,19 @@ GitHub is where their code lives online, and Vercel publishes the site from ther
      - Subject Matter Expert: name (or "TBD")
      - Learning Designer: name (or "TBD")
      - Builder: their name
-   - A clear "✅ Setup complete" badge
+   - **A "Builder setup" checklist** that shows Tom and Katie everything the Builder did. Keep the items in one easy-to-edit list at the top of the page file. Each item shows ✅ when it's done, or ⏳ when it's still to come:
+     - Claude Code: running in <the Claude desktop app / VS Code / the Terminal>
+     - Building tools: Homebrew, git, Node.js and GitHub's tool installed
+     - VS Code: installed, with the Claude Code extension
+     - GitHub: connected as <their GitHub username>
+     - Starter page: built and previewed on my Mac
+     - Saved to GitHub: in a private repo
+     - Live on Vercel: you're looking at it!
+     - Practice update: a change published by pushing to GitHub
+     - GitHub connector in Claude (optional): connected or skipped
+
+     For now, the first five are ✅ and the rest are ⏳. You'll finish the list in Step 6.
+   - A status badge that says "⏳ Setup in progress" for now. It becomes "✅ Setup complete" in Step 6.
    - A short mission line, such as: "Making Clever IDM the best-supported identity management solution for our customers."
    - A small footer: "Built with Claude Code · Stored on GitHub · Hosted on Vercel"
 
@@ -305,40 +321,42 @@ Vercel connects to their GitHub repo and publishes the site. After this one-time
 
 ✅ Done when: the public `.vercel.app` address loads their team page.
 
+### Bonus: Connect GitHub to the Claude app (optional, about 2 minutes)
+
+This lets regular Claude chats read their GitHub projects too. Claude Code doesn't need it, so it's a nice extra, not a requirement.
+- Have them open Claude (the app or claude.ai), go to **Settings → Connectors**, find **GitHub**, click **Connect** and approve in the browser.
+- If they don't see it, it isn't allowed for their account, or they'd rather skip it, that's fine. Either way, remember the result for the checklist in Step 6.
+
 ### Step 6: Practice the "change → push → live" loop
 
-This is exactly how they'll work at Campfire, so do one round now while there's no pressure:
+This is exactly how they'll work at Campfire, so do one round now while there's no pressure. This update also publishes their proof of setup.
 
 1. Ask everyone's favorite campfire snack 🔥. They can ask their teammates, or just put in their own and add the others later. Add the snack(s) to the team cards.
-2. In the same change, fill in the two links in `CLAUDE.md`.
-3. Build check, commit and push to `main`. Explain that the push is what tells Vercel to publish.
-4. Have them watch the new deployment appear in the Vercel dashboard (about a minute), then refresh the live site. Confirm the snack shows up, and check it yourself with curl too.
+2. In the same change, **finish the setup checklist on the page**:
+   - Mark every item ✅, and fill in the GitHub connector result (connected or skipped).
+   - Switch the badge to "✅ Setup complete" and add "Completed <today's date>".
+   - Tell them: "This is your proof of setup. Tom and Katie will see everything you did, right on your page."
+3. Also fill in the two links in `CLAUDE.md`.
+4. Build check, commit and push to `main`. Explain that the push is what tells Vercel to publish.
+5. Have them watch the new deployment appear in the Vercel dashboard (about a minute), then refresh the live site. Confirm the snack and the finished checklist show up, and check it yourself with curl too.
 
 **If Vercel blocks the deployment** with a message about the commit author (or a co-author) not having access:
 - Check that the commit email is their GitHub noreply address.
 - If the message is about a co-author, turn off Claude Code's co-author line for this project in its project settings.
 - Then push again.
 
-✅ Done when: the live site shows the update.
-
-### Bonus: Connect GitHub to the Claude app (optional, about 2 minutes)
-
-This lets regular Claude chats read their GitHub projects too. Claude Code doesn't need it, so it's a nice extra, not a requirement.
-- Have them open Claude (the app or claude.ai), go to **Settings → Connectors**, find **GitHub**, click **Connect** and approve in the browser.
-- If they don't see it, it isn't allowed for their account, or they'd rather skip it, that's fine. Just note it in the message to Tom and Katie.
+✅ Done when: the live site shows the snacks and a fully checked setup checklist.
 
 ### Step 7: Send the link to Tom and Katie
 
 Write a ready-to-copy message they can send on Slack. A group DM with Tom and Katie is perfect. Remind them it's due by **5pm on Friday, November 6**. Fill in the real values:
 
 ```
-Hi Tom & Katie! 🔥 My Campfire Builder setup is done and our team page is live:
+Hi Tom & Katie! 🔥 My Campfire Builder setup is done. Our team page is live, with a checklist of everything I set up:
 https://<their-domain>.vercel.app
 
 Team: <team name or TBD>
 GitHub repo: https://github.com/<username>/campfire-idm-<firstname> (private)
-Using Claude Code in: <desktop app / VS Code / Terminal>
-GitHub connector in Claude: <connected / skipped>
 
 Can't wait for Campfire!
 ```
@@ -350,14 +368,15 @@ Don't send it yourself, even if you have a Slack or email tool. They send it.
 Finish with:
 
 1. **The full checklist**, with everything checked off.
-2. **How to get back to the project at Campfire**, written for the way they're using Claude Code. Always open the project folder itself, `campfire-idm-<firstname>` inside `campfire`, so Claude reads `CLAUDE.md`:
+2. **A quick look inside VS Code.** Open their project for them with `code ~/campfire/campfire-idm-<firstname>`. Point out just two files: `app/page.tsx`, which is their team page, and `CLAUDE.md`, Claude's briefing note. Keep it to a minute, so they know where things live.
+3. **How to get back to the project at Campfire.** They can use either the Claude desktop app or VS Code. Always open the project folder itself, `campfire-idm-<firstname>` inside `campfire`, so Claude reads `CLAUDE.md`:
    - Claude desktop app: **Code** tab → new session → choose `campfire-idm-<firstname>`. It's inside `campfire`, under Favorites in the folder picker.
    - VS Code: **File → Open Folder…** → `campfire-idm-<firstname>`, then open Claude Code.
    - Terminal: `cd ~/campfire/campfire-idm-<firstname>`, then `claude`.
-3. **A short cheat sheet** of things they can say to Claude:
+4. **A short cheat sheet** of things they can say to Claude:
    - "Show me the site on my computer": starts the local preview
    - "Publish my changes": checks, saves, pushes and updates the live site
    - "What's changed since I last published?"
    - "Undo that last change"
    - "Something looks broken. Can you figure out why?"
-4. **A warm send-off.** Congratulate them for real: they just set up the same toolkit software engineers use every day. Thank them again for being a Builder, and say you can't wait to see what their team builds at Campfire.
+5. **A warm send-off.** Congratulate them for real: they just set up the same toolkit software engineers use every day. Thank them again for being a Builder, and say you can't wait to see what their team builds at Campfire.
